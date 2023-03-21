@@ -159,3 +159,7 @@ This is a good way to sanity check.  "Are these tests even running?"  Usually on
 ## Getting Started with GitHub Actions
 - This is basically a CI/CD setup
 - See: https://github.com/BZeise/enterprise-ui-dev/blob/main/content/Getting%20Started%20with%20Github%20Actions.md
+
+## TypeScript Hack
+- type RenderOptions = Parameters<typeof renderComponent>[1];
+- lol this is basically saying, 'the type should be whatever the second parameter of the renderComponent type is' heh
