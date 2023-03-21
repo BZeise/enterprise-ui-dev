@@ -81,3 +81,76 @@ Testing functions is all well and good, but what about mounting entire component
 
 - [Generating Artifacts Using Github Actions](content/Generating%20Artifacts%20Using%20Github%20Actions.md)
 - Exercise: [Generating an Artifact for Your Code Coverage Report](content/Generating%20Artifacts%20Using%20Github%20Actions#Exercise.md) and a [[Generating an Artifact for Your Code Coverage Report|Solution]]
+
+
+
+
+
+
+
+# Personal Notes Section
+
+Here are my notes for this session.
+- Course repo here:  https://github.com/stevekinney/enterprise-ui-dev
+
+What are we covering?
+- Fundamentals and philosophy of unit testing your application.
+- Some strategies for testing your components
+
+- how to maintain a large front-end app?  Backend folks contain things in separate micro-containers, and front-end job is to "make it so that the user never notices"
+  - Hmm.  That seems meaningful in a way that's going over my head
+
+## Components of a Well-Architected UI Application
+- Testing: Unit, component, integration, end-to-end, smoke tests, health checks
+- Static analysis: TypeScript, linting, formatting, etc
+- Build processes: Automatically run checks for the items above
+- Separation of concerns:  Keeping your business logic separate from the view layer
+- Deployment infrastructure: Do you even CDN?
+- Design processes: Are we thinking things out or throwing spaghetti at the wall?
+- See also:  https://github.com/stevekinney/enterprise-ui-dev/blob/main/content/Components%20of%20Large%20Application.md
+
+## Pyramid of Three Ingredients for a sustainable architecture
+- Patterns: Architecture, state management, abstractions
+- Processes: Code reviews, blueprints, design documents
+- Systems: Testing infrastructure, static analysis, build systems
+ - Like a hierarchy of needs, we need the bottom elements before the higher-level ones.  We need systems to base our processes on, and then patterns can emerge from that solid base.
+
+## Testing Frameworks
+- See this page:  https://github.com/stevekinney/enterprise-ui-dev/blob/main/content/Test%20Runners%20and%20Assertion%20Libraries.md
+
+### Experiment:  Vitest UI and Reporters
+Run the following:
+- npx vitest --run --reporter=verbose
+- npx vitest --run --reporter=dot
+- npx vitest --ui
+
+### Insist on Having Expectations
+This is a good way to sanity check.  "Are these tests even running?"  Usually only used when debugging.
+- expect.hasAssertions();
+- expect.assertions(1);
+
+### Note on vitest:
+- .toBe() checks for strict equality
+- .toEqual() checks for value equality
+ - some more nuances to .toEqual()
+
+- Can use it.todo when doing test-driven-development
+ - will write todo tests before you have written the real code
+- see list from exercise.test.ts
+ * toBe: https://vitest.dev/api/expect.html#tobe
+ * toBeCloseTo: https://vitest.dev/api/expect.html#tobecloseto
+ * toBeInstanceOf: https://vitest.dev/api/expect.html#tobeinstanceof
+ * toBeUndefined: https://vitest.dev/api/expect.html#tobeundefined
+ * toContain: https://vitest.dev/api/expect.html#tocontain
+ * toThrow: https://vitest.dev/api/expect.html#tothrow
+ * toThrowError: https://vitest.dev/api/expect.html#tothrowerror
+
+ - When using async operations...
+  - if we have like `const returnValue = board.removeStatus(status)` where `removeStatus` is asynchronous
+  - you can use `await board.removeStatus...`
+  - or you can use `expect(returnValue).resolves.toBe(4)`
+  - alternatively, `expect(returnValue).rejects.toBe(4)`
+
+- When talking about matching up objects if we only care about a few properties
+ - Can use `.toMatch` or `.toMatchObject`
+ - See: https://vitest.dev/api/expect.html#tomatch
