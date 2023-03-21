@@ -154,3 +154,8 @@ This is a good way to sanity check.  "Are these tests even running?"  Usually on
 - When talking about matching up objects if we only care about a few properties
  - Can use `.toMatch` or `.toMatchObject`
  - See: https://vitest.dev/api/expect.html#tomatch
+
+
+## Getting Started with GitHub Actions
+- This is basically a CI/CD setup
+- See: https://github.com/BZeise/enterprise-ui-dev/blob/main/content/Getting%20Started%20with%20Github%20Actions.md
