@@ -20,9 +20,27 @@ test('it should increment when the "Increment" button is pressed', async () => {
   expect(currentCount).toHaveTextContent('1');
 });
 
-test.todo('it should render the component with an initial count', () => {});
+test('it should render the component with an initial count', () => {
+  expect.hasAssertions();
+  render(<Counter initialCount={400} />);
 
-test.todo(
+  const currentCount = screen.getByTestId('current-count');
+  expect(currentCount).toHaveTextContent('400');
+});
+
+test(
   'it should reset the count when the "Reset" button is pressed',
-  async () => {},
+  async () => {
+    expect.hasAssertions();
+    const user = userEvent.setup();  
+
+
+    render(<Counter initialCount={400} />);
+
+    const currentCount = screen.getByTestId('current-count');
+    const resetButton = screen.getByRole('button', { name: 'Reset' });
+  
+    await user.click(resetButton);
+    expect(currentCount).toHaveTextContent('0');
+  },
 );
