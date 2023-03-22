@@ -43,7 +43,11 @@ As I alluded above, I'd be lying if I didn't admit that a big part of this cours
 
 ## What Technologies Are We Going to Use?
 
+<<<<<<< HEAD
 ![](../public/technologies.png)
+=======
+![](../assets/technologies.png)
+>>>>>>> upstream/main
 
 In a perfect world, I could make this course completely agnostic of any particular library or framework? That said, _not_ using a framework is a choice in-and-of itself. My goal is to make this content as framework-agnostic as possible, while also pulling in the lowest common denominator tools in order to make sure we're staying within the bounds of practicality.
 

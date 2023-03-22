@@ -21,7 +21,11 @@ afterEach(() => {
 
 `useFakeTimers()` replaces the global `setTimeout`, `clearTimeout`, `setInterval`, `setImmediate`, `clearImmediate`, `process.hrtime`, `performance.now`, and `Date` with a custom implementation that you can control.
 
+<<<<<<< HEAD
 It returns a `clock` object that starts at the Unix epoch (i.e. `0`). If you want to start time at some other point, you can pass it a different integer, but I'm going to argue that you're beeter off using `setSystemTime`, as we'll see below.
+=======
+It returns a `clock` object that starts at the Unix epoch (i.e. `0`). If you want to start time at some other point, you can pass it a different integer, but I'm going to argue that you're better off using `setSystemTime`, as we'll see below.
+>>>>>>> upstream/main
 
 ```ts
 vi.useFakeTimers(1677952591024);

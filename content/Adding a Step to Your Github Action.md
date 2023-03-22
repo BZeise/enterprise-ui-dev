@@ -30,7 +30,11 @@ jobs:
 
 You'll notice that I also named the steps. This is totally optional. I like it, but it really doesn't matter much.
 
+<<<<<<< HEAD
 ![](../public/build-and-test-with-names.png)
+=======
+![](../assets/build-and-test-with-names.png)
+>>>>>>> upstream/main
 
 (No, I don't know what to do about the inconsistent capitalization.)
 
@@ -76,10 +80,18 @@ jobs:
 
 You'll now have to jobs running in parallel:
 
+<<<<<<< HEAD
 ![](../public/test-and-build-actions.png)
 
 There seems to be some amount of duplication though, right? Part of this is because they're running in parallel. You can actually see this in the **Actions** tab in your repository:
 
 ![](../public/parallel-jobs.png)
+=======
+![](../assets/test-and-build-actions.png)
+
+There seems to be some amount of duplication though, right? Part of this is because they're running in parallel. You can actually see this in the **Actions** tab in your repository:
+
+![](../assets/parallel-jobs.png)
+>>>>>>> upstream/main
 
 It doesn't look like much, but trust me, we're running in parallel. That said, we're still downloading and installing our assets twice.

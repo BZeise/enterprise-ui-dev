@@ -21,6 +21,7 @@ steps:
 
 If we look at the Post Run for `actions/cache@v3`, we'll see that we wrote to the cache.
 
+<<<<<<< HEAD
 ![Writing to the Cache](../public/writing-to-the-cache.png)
 
 We can also navigate to it in the UI by going to the **Actions** tab and selecting **Caches** from the sidebar.
@@ -29,6 +30,16 @@ We can also navigate to it in the UI by going to the **Actions** tab and selecti
 In my very silly example, we'll see that it cut the total time down by 4 seconds. This may not seem like a lot, but it's 33%.
 
 ![Reading from the Cache](../public/reading-from-the-cache.png)
+=======
+![Writing to the Cache](../assets/writing-to-the-cache.png)
+
+We can also navigate to it in the UI by going to the **Actions** tab and selecting **Caches** from the sidebar.
+
+![Using the Cache](../assets/caches-in-actions.png)
+In my very silly example, we'll see that it cut the total time down by 4 seconds. This may not seem like a lot, but it's 33%.
+
+![Reading from the Cache](../assets/reading-from-the-cache.png)
+>>>>>>> upstream/main
 
 ## Quick Exercise/Experiment
 
@@ -48,7 +59,11 @@ As you can imagine, this is a pretty common task. So common that `actions/setup-
 
 `actions/setup-node@v3` names it a little differently, so you'll end up with a different cache, but that's okay.
 
+<<<<<<< HEAD
 ![The Tale of Two Caches](../public/tale-of-two-caches.png)
+=======
+![The Tale of Two Caches](../assets/tale-of-two-caches.png)
+>>>>>>> upstream/main
 
 But, like just because `actions/setup-node@v3` does it for you, it does't mean that you won't want this functionality elsewhere. Here are some use cases off the top of my mind:
 

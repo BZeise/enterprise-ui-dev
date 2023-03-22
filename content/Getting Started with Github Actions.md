@@ -32,7 +32,11 @@ jobs:
       - run: npm test
 ```
 
+<<<<<<< HEAD
 ![](../public/running-your-unit-tests-on-github-actions.png)
+=======
+![](../assets/running-your-unit-tests-on-github-actions.png)
+>>>>>>> upstream/main
 
 Okay, so what's going on here:
 
@@ -56,7 +60,11 @@ Okay, so what's going on here:
 - It blows away `node_modules` if present.
 - It doesn't write to `package.json`.
 
+<<<<<<< HEAD
 ![](../public/your-first-actions.png)
+=======
+![](../assets/your-first-actions.png)
+>>>>>>> upstream/main
 
 # Experiments
 

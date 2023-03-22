@@ -1,4 +1,4 @@
-![](public/enterprise-user-interface-development.png)
+![](assets/enterprise-user-interface-development.png)
 
 # Introduction
 
@@ -7,7 +7,7 @@ What is this course all about? What do you need? What technologies are we going 
 - [Introduction](content/Introduction.md)
 - [Components of Large Application](content/Components%20of%20Large%20Application.md)
 
-# Unit Testing: Act I
+# Unit Testing
 
 ## Testing Philosophy
 
@@ -48,7 +48,7 @@ We know that if a test doesn't fail then it technically passes. What about if yo
 
 - [Getting Started with Github Actions](content/Getting%20Started%20with%20Github%20Actions.md)
 - [Adding a Step to Your Github Action](content/Adding%20a%20Step%20to%20Your%20Github%20Action.md)
-- [[content/Caching Assets Between Jobs]]
+- [Caching Assets Between Jobs](content/Caching%20Assets%20Between%20Jobs.md)
 - [Caching Dependencies](content/Caching%20Dependencies.md)
 - [Setting Up Branch Protections](content/Setting%20Up%20Branch%20Protections.md)
 - Exercise: [Setting Up Prettier with Github Actions](content/Setting%20Up%20Prettier%20with%20Github%20Actions.md) and a [Solution](content/Setting%20Up%20Prettier%20Solution.md)
@@ -80,82 +80,37 @@ Testing functions is all well and good, but what about mounting entire component
 # Storing Artifacts Using Github Actions
 
 - [Generating Artifacts Using Github Actions](content/Generating%20Artifacts%20Using%20Github%20Actions.md)
-- Exercise: [Generating an Artifact for Your Code Coverage Report](content/Generating%20Artifacts%20Using%20Github%20Actions#Exercise.md) and a [[Generating an Artifact for Your Code Coverage Report|Solution]]
+- Exercise: [Generating an Artifact for Your Code Coverage Report](content/Generating%20Artifacts%20Using%20Github%20Actions#Exercise.md) and a [Solution](content/Generating%20an%20Artifact%20for%20Your%20Code%20Coverage%20Report.md)
 
+# Mocking and Spying
 
+- [Mocks](../content/Mocks.md)
+- [Spies](../content/Spies.md)
+- [Faking Time](../content/Faking%20Time.md)
+- [Clearing, Restoring, and Reseting Mocks and Spies](../content/Clearing,%20Restoring,%20and%20Reseting%20Mocks%20and%20Spies.md)
+- [Mocking Imports and Modules](../content/Mocking%20Imports%20and%20Modules.md)
+- A Word on [Dependency Injection](../content/Dependency%20Injection.md)
+- [Mocking Globals](../content/Mocking%20Globals.md)
+- [Mocking Environment Variables](../content/Mocking%20Environment%20Variables.md)
+- [Mocking APIs](../content/Mocking%20APIs.md)
 
+# Integration Testing with Playwright
 
+- [Getting Set Up with Playwright](content/Getting%20Set%20Up%20with%20Playwright.md)
+- [Writing Some Simple Playwright Tests](content/Writing%20Some%20Simple%20Playwright%20Tests.md)
+- Exercise: [Input Obstacles](content/Input%20Obstacles.md)
+- [Configuring Playwright](content/Configuring%20Playwright.md)
+- [Recording with Playwright](content/Recording%20with%20Playwright.md)
+- Exercise: Store an Artifact for Your Playwright Tests
+- Experiment: Get computed style for a DOM node
+- [Mocking Routes in Playwright](https://playwright.dev/docs/mock)
+- [[Recording Network Requests with Playwright]]
 
+# Enforcing Standards
 
-
-# Personal Notes Section
-
-Here are my notes for this session.
-- Course repo here:  https://github.com/stevekinney/enterprise-ui-dev
-
-What are we covering?
-- Fundamentals and philosophy of unit testing your application.
-- Some strategies for testing your components
-
-- how to maintain a large front-end app?  Backend folks contain things in separate micro-containers, and front-end job is to "make it so that the user never notices"
-  - Hmm.  That seems meaningful in a way that's going over my head
-
-## Components of a Well-Architected UI Application
-- Testing: Unit, component, integration, end-to-end, smoke tests, health checks
-- Static analysis: TypeScript, linting, formatting, etc
-- Build processes: Automatically run checks for the items above
-- Separation of concerns:  Keeping your business logic separate from the view layer
-- Deployment infrastructure: Do you even CDN?
-- Design processes: Are we thinking things out or throwing spaghetti at the wall?
-- See also:  https://github.com/stevekinney/enterprise-ui-dev/blob/main/content/Components%20of%20Large%20Application.md
-
-## Pyramid of Three Ingredients for a sustainable architecture
-- Patterns: Architecture, state management, abstractions
-- Processes: Code reviews, blueprints, design documents
-- Systems: Testing infrastructure, static analysis, build systems
- - Like a hierarchy of needs, we need the bottom elements before the higher-level ones.  We need systems to base our processes on, and then patterns can emerge from that solid base.
-
-## Testing Frameworks
-- See this page:  https://github.com/stevekinney/enterprise-ui-dev/blob/main/content/Test%20Runners%20and%20Assertion%20Libraries.md
-
-### Experiment:  Vitest UI and Reporters
-Run the following:
-- npx vitest --run --reporter=verbose
-- npx vitest --run --reporter=dot
-- npx vitest --ui
-
-### Insist on Having Expectations
-This is a good way to sanity check.  "Are these tests even running?"  Usually only used when debugging.
-- expect.hasAssertions();
-- expect.assertions(1);
-
-### Note on vitest:
-- .toBe() checks for strict equality
-- .toEqual() checks for value equality
- - some more nuances to .toEqual()
-
-- Can use it.todo when doing test-driven-development
- - will write todo tests before you have written the real code
-- see list from exercise.test.ts
- * toBe: https://vitest.dev/api/expect.html#tobe
- * toBeCloseTo: https://vitest.dev/api/expect.html#tobecloseto
- * toBeInstanceOf: https://vitest.dev/api/expect.html#tobeinstanceof
- * toBeUndefined: https://vitest.dev/api/expect.html#tobeundefined
- * toContain: https://vitest.dev/api/expect.html#tocontain
- * toThrow: https://vitest.dev/api/expect.html#tothrow
- * toThrowError: https://vitest.dev/api/expect.html#tothrowerror
-
- - When using async operations...
-  - if we have like `const returnValue = board.removeStatus(status)` where `removeStatus` is asynchronous
-  - you can use `await board.removeStatus...`
-  - or you can use `expect(returnValue).resolves.toBe(4)`
-  - alternatively, `expect(returnValue).rejects.toBe(4)`
-
-- When talking about matching up objects if we only care about a few properties
- - Can use `.toMatch` or `.toMatchObject`
- - See: https://vitest.dev/api/expect.html#tomatch
-
-
-## Getting Started with GitHub Actions
-- This is basically a CI/CD setup
-- See: https://github.com/BZeise/enterprise-ui-dev/blob/main/content/Getting%20Started%20with%20Github%20Actions.md
+- [Configuring Prettier](content/Prettier.md)
+- [Configuring and Running ESLint](content/Configuring%20and%20Running%20ESLint.md)
+- [Custom Rules for ESLint](content/Custom%20Rules%20for%20ESLint.md)
+- Exercise: Set Up a Job for Checking Lint and Prettier Rules
+- [[Husky, Lint-Staged, and Git Hooks](content/Husky,%20Lint-Staged,%20and%20Git%20Hooks.md)
+- [Creating a Reusable Github Action](content/Creating%20a%20Reusable%20Github%20Action.md)

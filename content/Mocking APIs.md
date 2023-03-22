@@ -1,3 +1,29 @@
+<<<<<<< HEAD
+=======
+A better alternative is just mock out the entire network layer—since you don't control it anyway.
+
+For this, we'll use a library called [Mock Service Worker](https://mswjs.io).
+
+```ts
+import { setupWorker, rest } from 'msw';
+
+const worker = setupWorker(
+  rest.post('/login', async (req, res, ctx) => {
+    const { username } = await req.json();
+
+    return res(
+      ctx.json({
+        username,
+        firstName: 'John',
+      }),
+    );
+  }),
+);
+
+worker.start();
+```
+
+>>>>>>> upstream/main
 ```ts
 import { afterAll, afterEach, beforeAll } from 'vitest';
 import { setupServer } from 'msw/node';
