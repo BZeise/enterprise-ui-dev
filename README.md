@@ -207,3 +207,21 @@ This is a good way to sanity check.  "Are these tests even running?"  Usually on
 
 ## Dependency Injection in React
 - if useItemIds needs a Provider... I have no idea.  what are we talking about
+
+## Amazing Tip for Playwright
+- `npx playwright codegen`
+ - will open browser, get to localhost:3000
+ - can hit record and record all mouseclicks and targeted actions
+- easier to use directly from the VS Code testing extension in the sidebar
+- omg Playwright supports XUnit testing for .NET it looks like, sweet
+- Use this to quickly write good e2e tests
+
+- Super wild command
+ - `npx playwright open --save-har=network-requests.har --save-har-glob="**/api**" http:localhost:3000`
+ - This will create a file with a record of all network requests
+ - saved in that .har file
+ - need to adjust it to not save file in the root folder
+
+### Examining Linters?
+- astexplorer.net
+  - can see all the stuffs
