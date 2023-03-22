@@ -225,3 +225,4 @@ This is a good way to sanity check.  "Are these tests even running?"  Usually on
 ### Examining Linters?
 - astexplorer.net
   - can see all the stuffs
+  - enforcing linters, you can have some input and see how your auto-adjusting linters will affect the input
