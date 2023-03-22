@@ -166,10 +166,10 @@ This is a good way to sanity check.  "Are these tests even running?"  Usually on
 ### Note on vitest:
 - .toBe() checks for strict equality
 - .toEqual() checks for value equality
- - some more nuances to .toEqual()
+  - some more nuances to .toEqual()
 
 - Can use it.todo when doing test-driven-development
- - will write todo tests before you have written the real code
+  - will write todo tests before you have written the real code
 - see list from exercise.test.ts
  * toBe: https://vitest.dev/api/expect.html#tobe
  * toBeCloseTo: https://vitest.dev/api/expect.html#tobecloseto
@@ -179,15 +179,15 @@ This is a good way to sanity check.  "Are these tests even running?"  Usually on
  * toThrow: https://vitest.dev/api/expect.html#tothrow
  * toThrowError: https://vitest.dev/api/expect.html#tothrowerror
 
- - When using async operations...
+- When using async operations...
   - if we have like `const returnValue = board.removeStatus(status)` where `removeStatus` is asynchronous
   - you can use `await board.removeStatus...`
   - or you can use `expect(returnValue).resolves.toBe(4)`
   - alternatively, `expect(returnValue).rejects.toBe(4)`
 
 - When talking about matching up objects if we only care about a few properties
- - Can use `.toMatch` or `.toMatchObject`
- - See: https://vitest.dev/api/expect.html#tomatch
+  - Can use `.toMatch` or `.toMatchObject`
+  - See: https://vitest.dev/api/expect.html#tomatch
 
 
 ## Getting Started with GitHub Actions
@@ -200,7 +200,7 @@ This is a good way to sanity check.  "Are these tests even running?"  Usually on
 
 ## Waiting for an element on the DOM to render
 - when testing, you can use:
- - `await waitFor(() => expect(removeItem).not.toBeInTheDocument());`
+  - `await waitFor(() => expect(removeItem).not.toBeInTheDocument());`
 
 ## RegEx Hot Tip
 - When looking for string matching, you can search for all case-insensitive uses of `"blarg"` with `/blarg/i`
@@ -210,17 +210,17 @@ This is a good way to sanity check.  "Are these tests even running?"  Usually on
 
 ## Amazing Tip for Playwright
 - `npx playwright codegen`
- - will open browser, get to localhost:3000
- - can hit record and record all mouseclicks and targeted actions
+  - will open browser, get to localhost:3000
+  - can hit record and record all mouseclicks and targeted actions
 - easier to use directly from the VS Code testing extension in the sidebar
 - omg Playwright supports XUnit testing for .NET it looks like, sweet
 - Use this to quickly write good e2e tests
 
-- Super wild command
- - `npx playwright open --save-har=network-requests.har --save-har-glob="**/api**" http:localhost:3000`
- - This will create a file with a record of all network requests
- - saved in that .har file
- - need to adjust it to not save file in the root folder
+#### Super wild command
+  - `npx playwright open --save-har=network-requests.har --save-har-glob="**/api**" http:localhost:3000`
+  - This will create a file with a record of all network requests
+  - saved in that .har file
+  - need to adjust it to not save file in the root folder
 
 ### Examining Linters?
 - astexplorer.net
